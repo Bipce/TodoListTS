@@ -1,14 +1,8 @@
 body {
-  font-size: 62.5%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #3d3c3b;
-  color: #bbbbb6;
   overflow: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: #bbbbb6;
+.scroll-container {
+  overflow-y: auto;
+  height: calc(100vh - 48px - 16px);
 }

@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Todos from "./pages/Todos";
+import Home from "./pages/Home";
 import Todo from "./pages/Todo";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="text-bg-secondary vh-100">
       <Router>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Todos />} />
+          <Route path="/" element={<Home />} />
           <Route path="/todos/:id" element={<Todo />} />
         </Routes>
       </Router>

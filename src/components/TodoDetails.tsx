@@ -5,8 +5,12 @@ interface IProps {
 }
 
 const TodoDetails: React.FC<IProps> = ({ todo }) => {
-  console.log(todo);
-  return <h1>yo</h1>;
+  return (
+    <>
+      <h1>{todo.title}</h1>
+      <p>{todo.completed ? "Completed" : "Not finish"}</p>
+    </>
+  );
 };
 
 export default TodoDetails;
