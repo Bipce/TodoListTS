@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div className="scroll-container mt-2">
-      <TodosList todos={todoContext.todos} />;
+      <TodosList todos={todoContext.todos} deleteTask={todoContext.deleteTask} />;
     </div>
   );
 };

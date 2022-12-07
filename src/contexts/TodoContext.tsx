@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 interface Props {
   todos: ITodo[] | undefined;
   addTask: (title: string) => void;
+  deleteTask: (id: number) => void;
 }
 
 export const TodoContext = createContext<Props>({} as Props);
@@ -32,5 +33,11 @@ export const TodoContextProvider = ({ children }: { children: React.ReactNode })
     setTodos(tmp);
   };
 
-  return <TodoContext.Provider value={{ todos, addTask }}>{children}</TodoContext.Provider>;
+  const deleteTask = (id: number) => {
+    const array = todos?.filter((todo) => todo.id != id);
+
+    setTodos(array);
+  };
+
+  return <TodoContext.Provider value={{ todos, addTask, deleteTask }}>{children}</TodoContext.Provider>;
 };
